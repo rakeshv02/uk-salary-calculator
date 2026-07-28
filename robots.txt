@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uk-salary-calculator.tabutility.com/sitemap.xml
