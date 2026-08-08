@@ -7,7 +7,6 @@
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <title>UK Salary Calculator 2025/26 — Tabutility</title>
 <meta name="description" content="Free UK salary calculator 2025/26. Calculate take-home pay after income tax, National Insurance and pension contributions."/>
 <meta name="keywords" content="uk salary calculator, take home pay calculator, uk income tax calculator, net pay calculator uk, uk tax calculator 2025"/>
@@ -31,51 +30,52 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this up to date?","acceptedAnswer":{"@type":"Answer","text":"Yes — updated for 2025/26 tax year with the latest rates and thresholds."}},{"@type":"Question","name":"Does it include National Insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes — includes Class 1 NI contributions."}},{"@type":"Question","name":"Can I add pension contributions?","acceptedAnswer":{"@type":"Answer","text":"Yes — enter your pension % to see the impact on take-home pay."}},{"@type":"Question","name":"Is the UK Salary Calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up needed."}}]}</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#0f172a;min-height:100vh}
-nav{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:14px 24px;display:flex;align-items:center;gap:16px}
-nav a{color:#64748b;text-decoration:none;font-size:14px}nav a:hover{color:#0f172a}
-nav .brand{color:#0f172a;font-weight:700;font-size:18px}
-.ad-banner{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:4px;text-align:center}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;border-bottom:1px solid #334155;padding:14px 24px;display:flex;align-items:center;gap:16px}
+nav a{color:#94a3b8;text-decoration:none;font-size:14px}nav a:hover{color:#f1f5f9}
+nav .brand{color:#4f46e5;font-weight:700;font-size:18px}
+.ad-banner{background:#1e293b;border-bottom:1px solid #334155;padding:4px;text-align:center}
 #app{max-width:720px;margin:8px auto;padding:0 16px 40px}
 h1{font-size:26px;font-weight:800;margin:24px 0 4px;text-align:center}
-.subtitle{color:#64748b;text-align:center;font-size:14px;margin-bottom:24px}
-.badge{display:inline-block;background:#1e3a5f;color:#0f172a;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
-.card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:24px;margin-bottom:16px}
+.subtitle{color:#94a3b8;text-align:center;font-size:14px;margin-bottom:24px}
+.badge{display:inline-block;background:#1e3a5f;color:#4f46e5;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;margin-bottom:16px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-group{display:flex;flex-direction:column;gap:6px}
-.form-group label{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
-.form-group input,.form-group select{background:#f8f7f4;border:1px solid #e2e8f0;color:#0f172a;padding:10px 12px;border-radius:8px;font-size:15px}
-.form-group input:focus,.form-group select:focus{outline:none;border-color:#0f172a}
+.form-group label{font-size:12px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em}
+.form-group input,.form-group select{background:#0f172a;border:1px solid #334155;color:#f1f5f9;padding:10px 12px;border-radius:8px;font-size:15px}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#4f46e5}
 .full{grid-column:1/-1}
-.calc-btn{width:100%;padding:14px;background:#0f172a;color:#f8f7f4;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:background .2s}
-.calc-btn:hover{background:#334155}
+.calc-btn{width:100%;padding:14px;background:#4f46e5;color:#0f172a;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;transition:background .2s}
+.calc-btn:hover{background:#4338ca}
 .results{display:none}
-.breakdown{background:#f8f7f4;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.breakdown{background:#0f172a;border:1px solid #334155;border-radius:10px;overflow:hidden;margin-bottom:16px}
 .brow{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .brow:last-child{border-bottom:none}
 .brow.highlight{background:rgba(56,189,248,0.08)}
-.brow .bl{font-size:14px;color:#64748b}.brow.highlight .bl{color:#0f172a;font-weight:600}
-.brow .bv{font-size:15px;font-weight:700;color:#0f172a}.brow.highlight .bv{color:#0f172a;font-size:18px}
+.brow .bl{font-size:14px;color:#94a3b8}.brow.highlight .bl{color:#f1f5f9;font-weight:600}
+.brow .bv{font-size:15px;font-weight:700;color:#f1f5f9}.brow.highlight .bv{color:#4f46e5;font-size:18px}
 .period-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.period-card{background:#f8f7f4;border:1px solid #e2e8f0;border-radius:10px;padding:14px;text-align:center}
-.period-card .pv{font-size:18px;font-weight:700;color:#0f172a}
-.period-card .pl{font-size:11px;color:#64748b;margin-top:3px}
+.period-card{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:14px;text-align:center}
+.period-card .pv{font-size:18px;font-weight:700;color:#4f46e5}
+.period-card .pl{font-size:11px;color:#94a3b8;margin-top:3px}
 .deduction{color:#ef4444!important}
 @media(max-width:600px){.form-grid{grid-template-columns:1fr}.period-grid{grid-template-columns:1fr 1fr}}
 </style>
   <meta name="theme-color" content="#1a1a2e" />
-  <style id="tabutility-brand">
-/* empty ad slots: reserve space, no bordered box */
-.ad-banner,.ad-slot,.ad-container{background:transparent!important;border:none!important;border-bottom:none!important;box-shadow:none!important}
+  <style id="tabutility-brand-v2">
+/* Canonical dark-surface spec (STYLE.md): indigo accent, white text on indigo */
+.btn,.toggle-btn.active,button.active{color:#fff!important}
+nav .brand{color:#fff}
+nav a:hover{color:#818cf8}
+input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
 /* AdSense not yet approved: hide all ad frames (container min-height still reserves space). Remove these two lines after approval. */
 ins.adsbygoogle,.ad-banner iframe,.ad-slot iframe,.ad-container iframe{visibility:hidden!important}
-nav .brand{color:#0f172a}
-body{-webkit-font-smoothing:antialiased}
 </style>
 </head>
 <body>
 <nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
-<div class="hub-link" style="max-width:900px;margin:12px auto 0;padding:0 16px"><a href="https://tabutility.com/uk-tax/" style="color:#0f172a;text-decoration:none;font-size:14px">← All UK Tax Calculators</a></div>
+<div class="hub-link" style="max-width:900px;margin:12px auto 0;padding:0 16px"><a href="https://tabutility.com/uk-tax/" style="color:#4f46e5;text-decoration:none;font-size:14px">← All UK Tax Calculators</a></div>
 <div class="ad-banner"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 <div id="app">
   <h1>💷 UK Salary Calculator <span class="badge">2025/26</span></h1>
@@ -124,7 +124,7 @@ body{-webkit-font-smoothing:antialiased}
       </div>
     </div>
     <div class="card">
-      <div style="font-size:13px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Breakdown</div>
+      <div style="font-size:13px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Breakdown</div>
       <div class="breakdown">
         <div class="brow"><span class="bl">Gross Salary</span><span class="bv" id="rGross">—</span></div>
         <div class="brow"><span class="bl">Pension (employee)</span><span class="bv deduction" id="rPension">—</span></div>
@@ -144,40 +144,40 @@ body{-webkit-font-smoothing:antialiased}
     
 
 <!-- embed-widget -->
-<div style="max-width:640px;margin:0 auto 32px;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px">
-  <h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
+<div style="max-width:640px;margin:0 auto 32px;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px">
+  <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Embed This Tool</h2>
   <p style="font-size:13px;color:#64748b;margin-bottom:12px">Add this UK Salary Calculator to your website or blog for free — just paste this code:</p>
-  <div style="background:#f8f7f4;border:1px solid #e2e8f0;border-radius:8px;padding:12px;font-family:'Inter',monospace;font-size:12px;color:#7dd3fc;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://uk-salary-calculator.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;UK Salary Calculator by Tabutility&quot;&gt;&lt;/iframe&gt;
+  <div style="background:#0f172a;border:1px solid #334155;border-radius:8px;padding:12px;font-family:monospace;font-size:12px;color:#818cf8;word-break:break-all;margin-bottom:10px" id="embed-code">&lt;iframe src=&quot;https://uk-salary-calculator.tabutility.com/&quot; width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; style=&quot;border-radius:12px&quot; title=&quot;UK Salary Calculator by Tabutility&quot;&gt;&lt;/iframe&gt;
 &lt;p style=&quot;font-size:12px&quot;&gt;&lt;a href=&quot;https://uk-salary-calculator.tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UK Salary Calculator&lt;/a&gt; by &lt;a href=&quot;https://tabutility.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Tabutility&lt;/a&gt;&lt;/p&gt;</div>
-  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#0f172a;color:#f8f7f4;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('embed-code').textContent).then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Embed Code',2000)})" style="background:#4f46e5;color:#0f172a;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer">Copy Embed Code</button>
   <span style="font-size:11px;color:#475569;margin-left:12px">Free to use — the credit link helps others find the tool</span>
 </div>
-<div style="margin:0 auto 24px;max-width:640px;background:#ffffff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #e2e8f0"><span style="font-size:24px">💸</span><div><strong style="color:#e2e8f0">Sending money abroad?</strong><br><span style="color:#64748b;font-size:14px">Wise gives you the real exchange rate with low, transparent fees. </span><a href="https://wise.prf.hn/click/camref:1100l5Q6iQ/pubref:uk-salary-calculator" target="_blank" rel="sponsored noopener" style="color:#0f172a;font-weight:700">Try Wise →</a></div></div>
-<div style="margin:0 auto 24px;max-width:640px;background:#ffffff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #e2e8f0" onclick="window.open('https://www.amazon.co.uk/s?k=UK%20tax%20personal%20finance%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Understand your tax better?">
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;border:1px solid #334155"><span style="font-size:24px">💸</span><div><strong style="color:#e2e8f0">Sending money abroad?</strong><br><span style="color:#94a3b8;font-size:14px">Wise gives you the real exchange rate with low, transparent fees. </span><a href="https://wise.prf.hn/click/camref:1100l5Q6iQ/pubref:uk-salary-calculator" target="_blank" rel="sponsored noopener" style="color:#4f46e5;font-weight:700">Try Wise →</a></div></div>
+<div style="margin:0 auto 24px;max-width:640px;background:#1e293b;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;border:1px solid #334155" onclick="window.open('https://www.amazon.co.uk/s?k=UK%20tax%20personal%20finance%20books&tag=tabutility-20','_blank','noopener noreferrer')" title="Understand your tax better?">
   <span style="font-size:28px;flex-shrink:0">📚</span>
   <div style="min-width:0">
-    <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px">Understand your tax better?</div>
-    <div style="font-size:12px;color:#64748b">Browse UK tax & personal finance books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
+    <div style="font-size:13px;font-weight:700;color:#f1f5f9;margin-bottom:3px">Understand your tax better?</div>
+    <div style="font-size:12px;color:#94a3b8">Browse UK tax & personal finance books <span style="color:#f59e0b;white-space:nowrap">→ Browse on Amazon</span></div>
     <div style="font-size:10px;color:#475569;margin-top:3px">As an Amazon Associate we earn from qualifying purchases.</div>
   </div>
 </div>
-<h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
+<h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
-      <a href="https://vat-calculator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#0f172a">VAT Calculator</div>
-        <div style="font-size:11px;color:#64748b;margin-top:2px">International</div>
+      <a href="https://vat-calculator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">VAT Calculator</div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
       </a>
-      <a href="https://hourly-to-salary.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#0f172a">Hourly to Salary</div>
-        <div style="font-size:11px;color:#64748b;margin-top:2px">Finance</div>
+      <a href="https://hourly-to-salary.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Hourly to Salary</div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:2px">Finance</div>
       </a>
-      <a href="https://uk-national-insurance.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#0f172a">NI Calculator</div>
-        <div style="font-size:11px;color:#64748b;margin-top:2px">International</div>
+      <a href="https://uk-national-insurance.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">NI Calculator</div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:2px">International</div>
       </a>
-      <a href="https://uk-pension-tax-relief.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid #e2e8f0;border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
-        <div style="font-size:13px;font-weight:600;color:#0f172a">UK Pension Tax Relief</div>
-        <div style="font-size:11px;color:#64748b;margin-top:2px">Finance</div>
+      <a href="https://uk-pension-tax-relief.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">UK Pension Tax Relief</div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:2px">Finance</div>
       </a>
     </div>
   </div>
@@ -185,22 +185,22 @@ body{-webkit-font-smoothing:antialiased}
 
 <div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:8px;margin-bottom:24px;padding:0 16px">
   <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
-    <h2 style="font-size:15px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
+    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Is this up to date?</div>
-      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — updated for 2025/26 tax year with the latest rates and thresholds.</div>
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is this up to date?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — updated for 2025/26 tax year with the latest rates and thresholds.</div>
     </div>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Does it include National Insurance?</div>
-      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — includes Class 1 NI contributions (8% on earnings £12,570–£50,270, 2% above).</div>
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Does it include National Insurance?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — includes Class 1 NI contributions (8% on earnings £12,570–£50,270, 2% above).</div>
     </div>
     <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Can I add pension contributions?</div>
-      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — enter your pension % to see the impact on take-home pay. Pension contributions reduce your taxable income.</div>
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Can I add pension contributions?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — enter your pension % to see the impact on take-home pay. Pension contributions reduce your taxable income.</div>
     </div>
     <div style="padding:14px 0">
-      <div style="font-size:14px;font-weight:600;color:#0f172a;margin-bottom:6px">Is this free?</div>
-      <div style="font-size:13px;color:#64748b;line-height:1.5">Yes — completely free, no sign-up needed.</div>
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is this free?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — completely free, no sign-up needed.</div>
     </div>
   </div>
 </div>
@@ -302,11 +302,11 @@ function calculate() {
   }
 })();
 </script>
-<footer style="border-top:1px solid #e2e8f0;background:#ffffff;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;color:#64748b;line-height:1.8">
-<div style="font-weight:700;color:#0f172a;font-size:15px">⚡ Tabutility</div>
+<footer style="background:#1a1a2e;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:13px;color:#94a3b8;line-height:1.8">
+<div style="font-weight:700;color:#fff;font-size:15px">⚡ Tabutility</div>
 <div>Free, private, browser-based tools. No sign-up, no tracking.</div>
-<div><a href="https://tabutility.com" style="color:#0f172a;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#64748b;text-decoration:none">Blog</a> · <a href="https://tabutility.com/#about" style="color:#64748b;text-decoration:none">About</a></div>
-<div style="margin-top:6px;color:#94a3b8">© 2026 Tabutility</div>
+<div><a href="https://tabutility.com" style="color:#818cf8;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#94a3b8;text-decoration:none">Blog</a> · <a href="https://tabutility.com/#about" style="color:#94a3b8;text-decoration:none">About</a></div>
+<div style="margin-top:6px;color:#64748b">© 2026 Tabutility</div>
 </footer>
 </body>
 </html>
