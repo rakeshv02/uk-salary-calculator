@@ -101,12 +101,12 @@ export default function App() {
       <div className="no-print" style={{ background: "#fff", borderBottom: "1px solid #e5e7eb", padding: "16px 24px" }}>
         <div style={{ maxWidth: "780px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <a href="https://tabutility.com" style={{ fontSize: "15px", fontWeight: "700", color: "#6366f1", textDecoration: "none" }}>⌘ Tabutility</a>
-          <button onClick={() => window.print()} style={{ padding: "8px 18px", background: "#0f172a", color: "#fff", border: "none", borderRadius: "8px", fontSize: "13px", fontWeight: "700", cursor: "pointer" }}>🖨️ Print / Save PDF</button>
+          <button onClick={() => window.print()} style={{ padding: "8px 18px", background: "#f8f7f4", color: "#fff", border: "none", borderRadius: "8px", fontSize: "13px", fontWeight: "700", cursor: "pointer" }}>🖨️ Print / Save PDF</button>
         </div>
       </div>
 
       <div style={{ maxWidth: "780px", margin: "0 auto", padding: "32px 16px" }}>
-        <h1 style={{ fontSize: "30px", fontWeight: "900", color: "#0f172a", margin: "0 0 6px" }}>UK Salary & Tax Calculator</h1>
+        <h1 style={{ fontSize: "30px", fontWeight: "900", color: "#f8f7f4", margin: "0 0 6px" }}>UK Salary & Tax Calculator</h1>
         <p style={{ fontSize: "15px", color: "#6b7280", margin: "0 0 28px" }}>Calculate your take-home pay after income tax, National Insurance, pension, and student loan. Tax year 2024/25.</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
@@ -213,9 +213,9 @@ export default function App() {
                     <div key={row.label} style={{ display: "flex", justifyContent: "space-between", padding: "9px 0", borderBottom: "1px solid #f3f4f6" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                         {!row.bold && <div style={{ width: "8px", height: "8px", borderRadius: "2px", background: row.color }} />}
-                        <span style={{ fontSize: "13px", color: row.bold ? "#0f172a" : "#374151", fontWeight: row.bold ? "800" : "400" }}>{row.label}</span>
+                        <span style={{ fontSize: "13px", color: row.bold ? "#f8f7f4" : "#374151", fontWeight: row.bold ? "800" : "400" }}>{row.label}</span>
                       </div>
-                      <span style={{ fontSize: "13px", fontWeight: "700", color: row.value < 0 ? row.color : "#0f172a" }}>
+                      <span style={{ fontSize: "13px", fontWeight: "700", color: row.value < 0 ? row.color : "#f8f7f4" }}>
                         {row.value < 0 ? `−£${fmt(Math.abs(row.value))}` : `£${fmt(row.value)}`}
                       </span>
                     </div>
@@ -231,7 +231,7 @@ export default function App() {
                   <div style={{ fontSize: "12px", fontWeight: "700", color: "#6b7280", marginBottom: "8px" }}>EMPLOYER'S TOTAL COST</div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <div>
-                      <div style={{ fontSize: "20px", fontWeight: "900", color: "#0f172a" }}>£{fmtN(result.gross + result.empNI)}</div>
+                      <div style={{ fontSize: "20px", fontWeight: "900", color: "#f8f7f4" }}>£{fmtN(result.gross + result.empNI)}</div>
                       <div style={{ fontSize: "12px", color: "#6b7280", marginTop: "2px" }}>salary + £{fmtN(result.empNI)} employer NI</div>
                     </div>
                   </div>
