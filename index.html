@@ -73,6 +73,7 @@ h1{font-size:26px;font-weight:800;margin:24px 0 4px;text-align:center}
 nav .brand{color:#fff}
 nav a:hover{color:#818cf8}
 input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
+input[type="number"],select,button{min-height:44px;box-sizing:border-box}
 </style>
 
 </head>
@@ -97,12 +98,14 @@ input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
         <label>Student Loan</label>
         <select id="studentLoan">
           <option value="none">None</option>
-          <option value="plan1">Plan 1 (threshold £24,990)</option>
-          <option value="plan2">Plan 2 (threshold £27,295)</option>
-          <option value="plan4">Plan 4 / Scotland (threshold £31,395)</option>
+          <option value="plan1">Plan 1 (threshold £26,900)</option>
+          <option value="plan2">Plan 2 (threshold £29,385)</option>
+          <option value="plan4">Plan 4 (threshold £33,795)</option>
+          <option value="plan5">Plan 5 (threshold £25,000)</option>
         </select>
       </div>
     </div>
+    <p>2026/27 estimate for England, Wales and Northern Ireland, not Scottish Income Tax bands. Pension is modeled as a net-pay contribution, not salary sacrifice or relief at source. Models one undergraduate student-loan plan, not concurrent postgraduate repayments.</p>
     <button class="calc-btn" onclick="calculate()">Calculate Take-Home Pay</button>
   </div>
 
@@ -217,9 +220,9 @@ function calcIncomeTax(taxable) {
   if (adjustedTaxable <= 0) return 0;
   const basicBand = Math.min(adjustedTaxable, br - pa);
   tax += Math.max(0, basicBand) * 0.20;
-  const higherBand = Math.min(Math.max(adjustedTaxable - (br - pa), 0), hr - br);
+  const higherBand = Math.min(Math.max(adjustedTaxable - (br - pa), 0), hr - effectivePA - (br - pa));
   tax += higherBand * 0.40;
-  const addBand = Math.max(adjustedTaxable - (hr - pa), 0);
+  const addBand = Math.max(taxable - hr, 0);
   tax += addBand * 0.45;
   return tax;
 }
@@ -236,7 +239,7 @@ function calcNI(gross) {
 
 function calcStudentLoan(gross, plan) {
   if (plan === 'none') return 0;
-  const thresholds = {plan1:24990, plan2:27295, plan4:31395};
+  const thresholds = {plan1:26900, plan2:29385, plan4:33795, plan5:25000};
   const threshold = thresholds[plan];
   return Math.max(0, gross - threshold) * 0.09;
 }
@@ -244,6 +247,10 @@ function calcStudentLoan(gross, plan) {
 function calculate() {
   const gross = parseFloat(document.getElementById('salary').value) || 0;
   const pensionPct = parseFloat(document.getElementById('pension').value) || 0;
+  if (!Number.isFinite(gross) || gross < 0 || pensionPct < 0 || pensionPct > 100) {
+    alert('Enter a non-negative salary and a pension percentage between 0 and 100.');
+    return;
+  }
   const slPlan = document.getElementById('studentLoan').value;
   const pensionAmt = gross * pensionPct / 100;
   const taxable = Math.max(0, gross - pensionAmt);
@@ -293,26 +300,26 @@ function calculate() {
 </script>
 <footer style="background:#1a1a2e;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:13px;color:#94a3b8;line-height:1.8">
 <div style="font-weight:700;color:#fff;font-size:15px">⚡ Tabutility</div>
-<div>Free, private, browser-based tools. No sign-up, no tracking.</div>
+<div>Free, browser-based tools. No sign-up. Advertising and analytics are explained in our privacy policy.</div>
 <div style="margin-top:6px"><a href="https://tabutility.com" style="color:#818cf8;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#94a3b8;text-decoration:none">Blog</a> · <a href="https://tabutility.com/about/" style="color:#94a3b8;text-decoration:none">About</a> · <a href="https://tabutility.com/privacy-policy/" style="color:#94a3b8;text-decoration:none">Privacy</a> · <a href="https://tabutility.com/contact/" style="color:#94a3b8;text-decoration:none">Contact</a></div>
 <div style="margin-top:6px;color:#64748b">© 2026 Tabutility</div>
 
   <section id="seo-content" style="background:#1a1a2e;color:#e2e8f0;padding:60px 20px;margin-top:40px;border-top:1px solid #2d3748;">
     <div style="max-width:860px;margin:0 auto;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;">
       <h2 style="font-size:2rem;font-weight:700;color:#f1f5f9;margin-bottom:24px;">How to Use the UK Salary Calculator</h2>
-      <p style="margin-bottom:16px;color:#cbd5e1;">The UK Salary Calculator computes your exact take-home pay for 2026/27, accounting for Income Tax (at 20%, 40%, and 45% bands), National Insurance (Class 1 employee contributions), pension contributions, and student loan repayments. It handles all thresholds and tapers accurately.</p>
-      <p style="margin-bottom:16px;color:#cbd5e1;">Enter your annual gross salary, select your tax code (if known), pension contribution percentage, and student loan plan. The calculator instantly shows your monthly and weekly take-home, tax breakdown, NI contributions, and effective tax rate.</p>
+      <p style="margin-bottom:16px;color:#cbd5e1;">The UK Salary Calculator estimates take-home pay for 2026/27 using England, Wales and Northern Ireland rates. It includes Income Tax, employee National Insurance, a net-pay pension contribution and one selected undergraduate loan. It does not model Scottish Income Tax, salary sacrifice or relief-at-source pensions.</p>
+      <p style="margin-bottom:16px;color:#cbd5e1;">Enter annual gross salary, pension contribution percentage and a student-loan plan. Results show annual, monthly and weekly planning estimates rather than an exact payslip or tax-code assessment.</p>
       <p style="margin-bottom:16px;color:#cbd5e1;">A crucial nuance is the Personal Allowance taper: for incomes above £100,000, the £12,570 personal allowance reduces by £1 for every £2 earned over £100,000, effectively creating a 60% marginal tax rate between £100,000 and £125,140. Above £125,140 the personal allowance is fully withdrawn. Pension contributions can restore the personal allowance.</p>
 
       <div style="background:#0f172a;border:1px solid #334155;border-radius:12px;padding:28px;margin:32px 0;">
         <h3 style="font-size:1.2rem;font-weight:600;color:#f1f5f9;margin-bottom:16px;">📊 Worked Example</h3>
         <p style="color:#94a3b8;margin:0 0 12px;">£55,000 gross salary, 2026/27, no student loan, 5% pension:</p>
         <ul style="list-style:none;padding:0;margin:0;color:#cbd5e1;">
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Income Tax: <strong style="color:#f87171;">£10,286</strong> (20% on £37,700 + 40% on £4,730)</li>
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">National Insurance: <strong style="color:#f87171;">£3,924</strong></li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Income Tax: <strong style="color:#f87171;">£8,332</strong> (20% on £37,700 + 40% on £1,980 after pension)</li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">National Insurance: <strong style="color:#f87171;">£3,110.60</strong></li>
           <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Pension (5%): <strong style="color:#f1f5f9;">£2,750</strong></li>
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Monthly take-home: <strong style="color:#34d399;">£3,170</strong></li>
-          <li style="padding:6px 0;">Effective tax rate: <strong style="color:#f1f5f9;">25.8%</strong></li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Monthly take-home: <strong style="color:#34d399;">£3,400.62</strong></li>
+          <li style="padding:6px 0;">Effective tax rate: <strong style="color:#f1f5f9;">20.8%</strong></li>
         </ul>
       </div>
 
